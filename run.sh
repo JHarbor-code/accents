@@ -1,1 +1,4 @@
-python3 "src/main.py"
+#!/bin/bash
+SCRIPT_DIR="$(dirname "$(realpath "$0")")"
+
+python3 "$SCRIPT_DIR/src/main.py"

@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Installation..."
 echo "python3-gi..."
 command -v python3-gi >/dev/null || sudo apt install -y python3-gi 

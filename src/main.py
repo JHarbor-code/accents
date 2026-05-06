@@ -1,5 +1,5 @@
 import os
-import sys
+from pathlib import Path
 import subprocess
 
 import gi
@@ -10,9 +10,9 @@ from gi.repository import Gtk, AppIndicator3
 
 
 
-base_path = os.path.abspath("")
+base_path = Path(__file__).resolve().parent.parent
 
-image_path = os.path.join(base_path, "assets", "reindeer.png")
+image_path = base_path / "assets" / "reindeer.png"
 
 
 def copy(text: str):
@@ -107,6 +107,6 @@ indicator.set_status(AppIndicator3.IndicatorStatus.ACTIVE)
 indicator.set_menu(build_menu())
 
 if os.path.isfile(image_path):
-    indicator.set_icon_full(image_path, "accents")
+    indicator.set_icon_full(str(image_path), "accents")
 
 Gtk.main()
